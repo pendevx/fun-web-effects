@@ -4,7 +4,6 @@ const WIDTH_STRETCH = 120;
 const MAX_SCALE = 0.5;
 
 const elements = document.querySelectorAll(".icon");
-let moved = new Array(elements.length).fill(false);
 const positions = [...elements].map(x => {
     const clientRect = x.getBoundingClientRect();
 
