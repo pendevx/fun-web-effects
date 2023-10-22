@@ -1,0 +1,33 @@
+/* --r1: 1fr;
+--r2: 1fr;
+--r3: 1fr;
+--c1: 1fr;
+--c2: 1fr;
+--c3: 1fr; */
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: var(--c1, 1fr) var(--c2, 1fr) var(--c3, 1fr);
+    grid-template-rows: var(--r1, 1fr) var(--r2, 1fr) var(--r3, 1fr);
+    transition: 0.2s ease-in-out;
+    width: 500px;
+    height: 500px;
+}
+
+.container,
+.container > * {
+    border: 2px solid black;
+}
+
+.cell {
+    background-color: red;
+}
+
+.cell:nth-child(1):hover {
+    --r1: 2fr;
+    --c1: 2fr;
+}
