@@ -1,0 +1,23 @@
+body {
+    overflow: none;
+}
+
+.container {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+}
+
+.icon {
+    --size: 60px;
+    width: var(--size);
+    height: var(--size);
+    background-color: red;
+    margin: auto;
+    border-radius: 15px;
+    bottom: 0;
+}
