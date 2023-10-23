@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    line-height: 1.5;
 }
 
 header {
@@ -21,11 +22,11 @@ header {
     border: 2px solid black;
     vertical-align: top;
     margin: 10px 1%;
+    height: 500px;
 }
 
 .effects > img {
     width: 100%;
-    object-fit: cover;
 }
 
 a {
