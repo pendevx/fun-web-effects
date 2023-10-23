@@ -6,10 +6,6 @@ header {
     background-color: rgb(233, 233, 233);
 }
 
-main {
-    margin: 8px;
-}
-
 #title {
     text-align: center;
     font-size: 4em;
@@ -20,10 +16,12 @@ main {
 
 .effects {
     display: inline-block;
-    width: 25%;
+    width: 20%;
+    height: 600px;
     padding: 20px;
     border: 2px solid black;
     vertical-align: top;
+    margin: 10px 1%;
 }
 
 .effects > img {
