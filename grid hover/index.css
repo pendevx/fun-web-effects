@@ -1,9 +1,6 @@
-/* --r1: 1fr;
---r2: 1fr;
---r3: 1fr;
---c1: 1fr;
---c2: 1fr;
---c3: 1fr; */
+:root {
+    background-color: gray;
+}
 
 .container {
     position: absolute;
@@ -11,23 +8,124 @@
     left: 50%;
     transform: translate(-50%, -50%);
     display: grid;
-    grid-template-columns: var(--c1, 1fr) var(--c2, 1fr) var(--c3, 1fr);
-    grid-template-rows: var(--r1, 1fr) var(--r2, 1fr) var(--r3, 1fr);
+
+    background-color: rgb(75, 75, 75);
+    padding: 10px;
+
+    --r1: 1fr;
+    --r2: 1fr;
+    --r3: 1fr;
+    --c1: 1fr;
+    --c2: 1fr;
+    --c3: 1fr;
+
+    grid-template-columns: var(--c1) var(--c2) var(--c3);
+    grid-template-rows: var(--r1) var(--r2) var(--r3);
     transition: 0.2s ease-in-out;
     width: 500px;
     height: 500px;
+
+    gap: 10px;
 }
 
-.container,
-.container > * {
-    border: 2px solid black;
-}
-
-.cell {
+.cell:nth-child(1) {
     background-color: red;
 }
 
-.cell:nth-child(1):hover {
+.cell:nth-child(2) {
+    background-color: orange;
+}
+
+.cell:nth-child(3) {
+    background-color: yellow;
+}
+
+.cell:nth-child(6) {
+    background-color: greenyellow;
+}
+
+.cell:nth-child(9) {
+    background-color: green;
+}
+
+.cell:nth-child(8) {
+    background-color: blue;
+}
+
+.cell:nth-child(7) {
+    background-color: indigo;
+}
+
+.cell:nth-child(4) {
+    background-color: purple;
+}
+
+.cell:nth-child(5) {
+    background-color: white;
+}
+
+/* 
+
+.container > .cell:nth-child(1):hover {
     --r1: 2fr;
     --c1: 2fr;
 }
+
+This does not work because this selects the child (cell) instead of the parent (container).
+So if we try adjusting the variables, it will not adjust on the parent, rather on the child itself.
+
+*/
+
+
+/*
+This works because:
+    :has pseudoclass activates if the condition selector is active
+    .container:has() keeps the selector on the .container class rather than the .cell class
+
+This way, if we modify the variables, we adjust the values which are on the parent container class so the effect works.
+*/
+.container:has(.cell:nth-child(1):hover) {
+    --r1: 2fr;
+    --c1: 2fr;
+}
+
+.container:has(.cell:nth-child(2):hover) {
+    --r1: 2fr;
+    --c2: 2fr;
+}
+
+.container:has(.cell:nth-child(3):hover) {
+    --r1: 2fr;
+    --c3: 2fr;
+}
+
+.container:has(.cell:nth-child(4):hover) {
+    --r2: 2fr;
+    --c1: 2fr;
+}
+
+.container:has(.cell:nth-child(5):hover) {
+    --r2: 2fr;
+    --c2: 2fr;
+}
+
+.container:has(.cell:nth-child(6):hover) {
+    --r2: 2fr;
+    --c3: 2fr;
+}
+
+.container:has(.cell:nth-child(7):hover) {
+    --r3: 2fr;
+    --c1: 2fr;
+}
+
+.container:has(.cell:nth-child(8):hover) {
+    --r3: 2fr;
+    --c2: 2fr;
+}
+
+.container:has(.cell:nth-child(9):hover) {
+    --r3: 2fr;
+    --c3: 2fr;
+}
+
