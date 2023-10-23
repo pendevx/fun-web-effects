@@ -23,9 +23,16 @@ header {
     vertical-align: top;
     margin: 10px 1%;
     height: 500px;
+    transition: 0.2s ease-in-out;
 }
 
-.effects > img {
+.effects:hover {
+    /* transform: translate(-5px, -5px); */
+    transform: scale(1.01);
+    box-shadow: 5px 5px gray;
+}
+
+.effects a img {
     width: 100%;
 }
 
