@@ -30,6 +30,8 @@ header {
     margin: 10px 1%;
     height: 500px;
     transition: 0.2s ease-in-out;
+    min-height: 500px;
+    overflow: auto;
 }
 
 .effects:nth-child(4n+1) {
